@@ -1,7 +1,7 @@
 import pygame
 from pygame.locals import *
 pygame.init()
-screen = pygame.display.set_mode((600,400))
+screen = pygame.display.set_mode((1000,400))
 pygame.display.set_caption('Obstacle Game')
 white = (255,255,255)
 red = (255,0,0)
@@ -12,7 +12,7 @@ Green = pygame.image.load('green.png')
 Yellow = pygame.image.load('yellow.png')
 Yellow = pygame.transform.scale(Yellow,(50,50))
 title = pygame.image.load('title.png')
-title = pygame.transform.scale(title,(600,400))
+title = pygame.transform.scale(title,(1000,400))
 obs = pygame.image.load('obs.png')
 obs = pygame.transform.scale(obs, (40, 200))
 char = pygame.image.load('char.png')
@@ -49,7 +49,7 @@ def playgame():
             if event.type == KEYDOWN:
                 if event.key == K_0:
                     if backy == 0:
-                        backvel = 0.2
+                        backvel = 0.5
                         game = True
                 if event.key == K_SPACE:
                     playgame()
@@ -230,7 +230,7 @@ def playgame():
             screen.blit(text2, (350, 10))
 
             if gameover:
-                screen.blit(text1, (100, 200))
+                screen.blit(text1, (300, 200))
 
             pygame.display.update()
 playgame()
